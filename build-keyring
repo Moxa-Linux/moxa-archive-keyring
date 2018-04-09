@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+	echo "Usage: $0 <keys_dir> <output_file>" >&2
+	exit 1
+fi
+
+GNUPGHOME=$(mktemp -d -t keyring.XXXXXXXX)
+export GNUPGHOME
+trap cleanup exit
+cleanup () {
+	rm -rf "$GNUPGHOME"
+}
+
+keys_dir=$(readlink -f "$1")
+output_file="$2"
+
+key_files=$keys_dir/*
+for i in $key_files
+do
+	gpg --import $i
+done
+
+gpg -o $output_file --export
+
+exit 0
