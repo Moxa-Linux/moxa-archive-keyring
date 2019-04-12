@@ -1,0 +1,16 @@
+Source: moxa-archive-keyring
+Priority: important
+Section: misc
+Maintainer: Ken CJ Chou <KenCJ.Chou@moxa.com>
+Build-Depends: debhelper (>= 10), gnupg2
+Standards-Version: 4.1.2
+
+Package: moxa-archive-keyring
+Architecture: all
+Multi-Arch: foreign
+Depends: gpgv, ${misc:Depends}
+Recommends: gnupg2
+Description: GnuPG archive keys of the Moxa archive
+ Moxa signed APT Release files and every Debian packages
+ released. This package is for archiving public keys used 
+ for verifying signatures of those files.
