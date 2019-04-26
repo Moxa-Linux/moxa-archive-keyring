@@ -1,3 +1,9 @@
+moxa-archive-keyring (2019.4.26+deb9) stretch; urgency=medium
+
+  * Add MOXA-SYS's public key which is for former Debian version (7 & 8)
+
+ -- Ken CJ Chou <KenCJ.Chou@moxa.com>  Fri, 26 Apr 2019 11:40:43 +0800
+
 moxa-archive-keyring (2018.4.11) stretch; urgency=medium
 
   * Add new master key for MIL 1 with a signing subkey
